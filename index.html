@@ -7,7 +7,7 @@
     <title>Task Manager</title>
   </head>
   <body>
-    <div class="max-w m-auto todolist">
+    <div class="todolist">
       <!-- Progress Box -->
       <div class="prog-box">
         <!-- Progress Bar -->
@@ -25,7 +25,12 @@
       </div>
 
       <!-- Task Creater -->
-      <div></div>
+      <form action="">
+        <input type="text" placeholder="Write Your Text">
+        <button type="submit">+</button>
+      </form>
+
+      <ul class="tasks"></ul>
     </div>
 
     <script src="./app.js"></script>
