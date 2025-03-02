@@ -7,9 +7,42 @@ const addTask = () => {
 
   if (text) {
     tasks.push({ text: text, completed: false });
-
+    createTask.value = "";
     updateTasksList();
   }
+};
+
+// Task Completion Toggle
+const toggleTaskComplete = (index) => {
+  tasks[index].completed = !tasks[index].completed;
+  updateTasksList();
+};
+
+// Task Deletion
+const deleteTask = (index) => {
+  tasks.splice(index, 1);
+  updateTasksList();
+  updateProgress();
+};
+
+// Task Editing
+const editTask = (index) => {
+  const createTask = document.getElementById("create-task");
+  createTask.value = tasks[index].text;
+
+  tasks.splice(index, 1);
+  updateTasksList();
+  updateProgress();
+};
+
+// Progress Updation
+const updateProgress = () => {
+  const completedTasks = tasks.filter((task) => task.completed).length;
+  const totalTasks = tasks.length;
+  const progress = (completedTasks / totalTasks) * 100;
+  const progBar = document.getElementById("progress");
+
+  progBar.style.widows = `${progress}%`;
 };
 
 // Updating Tasks List
