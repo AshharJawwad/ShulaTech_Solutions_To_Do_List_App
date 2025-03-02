@@ -9,8 +9,8 @@
   --background: rgb(0, 0, 49);
   --secondaryBackground: #171c48;
   --text: #fff;
-  --lightPurple: #828dff;
-  --teal: #24feee;
+  --lightGreen: #1df9c6;
+  --teal: #19faeb;
 }
 
 body {
@@ -35,13 +35,12 @@ body {
   padding: 30px;
   border-radius: 18px;
   gap: 50px;
-  border: solid var(--lightPurple) 2px;
+  border: solid var(--lightGreen) 2px;
   width: 100%;
 }
 
 .details {
   width: 100%;
-  gap: 25px;
 }
 /* Progress Bar */
 #progBar {
@@ -67,7 +66,7 @@ body {
   align-items: center;
   width: 100px;
   height: 100px;
-  background-color: var(--lightPurple);
+  background-color: var(--lightGreen);
   font-size: 30px;
   font-weight: bold;
   border-radius: 50%;
@@ -85,7 +84,7 @@ input {
   flex: 1;
   padding: 10px;
   background-color: var(--secondaryBackground);
-  border: solid var(--lightPurple) 1px;
+  border: solid var(--lightGreen) 1px;
   color: var(--text);
   border-radius: 10px;
   outline: none;
@@ -98,7 +97,7 @@ button {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--lightPurple);
+  background-color: var(--lightGreen);
   color: var(--text);
   font-size: 28px;
   font-weight: bold;
