@@ -1,4 +1,20 @@
+// Storing & Displaying the Tasks
+document.addEventListener("DOMContentLoaded", () => {
+  const tasksStored = JSON.parse(localStorage.getItem("tasks"));
+
+  if (tasksStored) {
+    tasksStored.forEach((task) => tasks.push(task));
+    updateTasksList();
+    updateProgress();
+  }
+});
+
 let tasks = [];
+
+// Saving Tasks To Local Storage
+const save = () => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+};
 
 // Adding Tasks
 const addTask = () => {
@@ -9,6 +25,8 @@ const addTask = () => {
     tasks.push({ text: text, completed: false });
     createTask.value = "";
     updateTasksList();
+    updateProgress();
+    save();
   }
 };
 
@@ -16,6 +34,8 @@ const addTask = () => {
 const toggleTaskComplete = (index) => {
   tasks[index].completed = !tasks[index].completed;
   updateTasksList();
+  updateProgress();
+  save();
 };
 
 // Task Deletion
@@ -23,6 +43,7 @@ const deleteTask = (index) => {
   tasks.splice(index, 1);
   updateTasksList();
   updateProgress();
+  save();
 };
 
 // Task Editing
@@ -33,6 +54,7 @@ const editTask = (index) => {
   tasks.splice(index, 1);
   updateTasksList();
   updateProgress();
+  save();
 };
 
 // Progress Updation
@@ -42,7 +64,11 @@ const updateProgress = () => {
   const progress = (completedTasks / totalTasks) * 100;
   const progBar = document.getElementById("progress");
 
-  progBar.style.widows = `${progress}%`;
+  progBar.style.width = `${progress}%`;
+
+  document.getElementById(
+    "counter"
+  ).innerText = `${completedTasks} / ${totalTasks}`;
 };
 
 // Updating Tasks List

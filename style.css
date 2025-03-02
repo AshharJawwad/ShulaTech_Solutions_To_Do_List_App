@@ -41,11 +41,12 @@ body {
 
 .details {
   width: 100%;
+  gap: 25px;
 }
 /* Progress Bar */
-#prog-bar {
+#progBar {
   width: 100%;
-  height: 10px;
+  height: 8px;
   margin-top: 25px;
   background-color: var(--secondaryBackground);
   border-radius: 5px;
@@ -53,7 +54,7 @@ body {
 
 #progress {
   width: 0%;
-  height: 10px;
+  height: 8px;
   background-color: var(--teal);
   border-radius: 10px;
   transition: all 0.3s ease;
